@@ -49,14 +49,14 @@ func getUser(id int) error {
 ```go
 func validate(data Data) error {
     var errs []error
-    
+
     if data.Name == "" {
         errs = append(errs, errors.New("name required"))
     }
     if data.Email == "" {
         errs = append(errs, errors.New("email required"))
     }
-    
+
     return errors.Join(errs...)
 }
 ```
@@ -81,10 +81,3 @@ func unsupportedFormat() error {
 - `Join(errs ...error) error` - Combine multiple errors
 - `ErrNotImplemented` - Pre-defined "not implemented" error
 - `ErrUnsupported` - Pre-defined "unsupported" error
-
-## Best Practices
-
-- Wrap errors when crossing package boundaries
-- Use `Wrapf` for dynamic error messages
-- Use `errors.Is()` and `errors.As()` for error checking
-- Don't wrap errors that are already descriptive
