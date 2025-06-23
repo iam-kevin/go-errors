@@ -56,7 +56,7 @@ func Wrapf(cause error, format string, args ...any) error {
 // ErrorWithCause defines an interface for errors that have a cause.
 type ErrorWithCause interface {
 	Error() string
-	Cause() string
+	Cause() error
 }
 
 // ErrNotImplemented should be thrown to indicate that a particular
