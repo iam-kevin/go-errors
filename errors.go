@@ -11,6 +11,10 @@ func New(message string) error {
 	return errors.New(message)
 }
 
+func Unwarp(err error) error {
+	return errors.Unwrap(err)
+}
+
 // Join combines multiple errors into a single error.
 func Join(err ...error) error {
 	return errors.Join(err...)
